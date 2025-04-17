@@ -1,0 +1,1196 @@
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[OM] Requerimentos</title>
+        <link rel="icon" href="https://i.imgur.com/w0yfJBl.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #181818 15%, #293234 50%, #181818 75%);
+            background-size: 100% 150%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
+            opacity: 0;
+            animation: Entrad 0.8s ease-out forwards;
+        }
+
+        @keyframes Entrad {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 10px;
+            margin-bottom: -45px;
+            position: relative;
+            z-index: -1;
+        }
+
+        header img {
+            width: 300px; 
+            display: block;
+            margin: -60px auto;
+            transition: all 0.3s ease-in-out;
+            filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
+            z-index: -5;
+        }
+
+        header img:hover {
+            filter: brightness(1.1);
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        ::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 725px;
+            margin: 20px auto;
+            padding: 12px;
+            background: #1e1e1e;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+
+        .tittle {
+            font-size: 28px;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            color: #f0f0f0;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .tittle::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #416572;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .custom-dropdown {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .dropdown-toggle {
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            justify-content: space-between;
+            padding: 18px 22px;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #181818, #293234);
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        .dropdown-toggle:hover {
+            transform: scale(1.005);
+            filter: brightness(1.1);
+        }
+
+        .seta {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-open .seta {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            list-style: none;
+            padding: 0;
+            margin: 5px 0 0;
+            width: 100%;
+            background: #111;
+            border-radius: 8px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            opacity: 0;
+            overflow-y: auto;
+            max-height: 190px;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .dropdown-open .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            padding: 12px 16px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu li:hover {
+            background: #0000007e;
+            color: #568394;
+        }
+
+        .card {
+            font-family: 'Poppins', sans-serif;
+            display: none;
+            margin: 30px auto;
+            padding: 28px 32px;
+            max-width: 720px;
+            background: linear-gradient(135deg, #ffffff, #f8f8f8);
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #0f0f0f, #2b2b2b, #0f0f0f);
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+            border-top-left-radius: 11px;
+            border-top-right-radius: 11px;
+        }
+
+        .card .tittle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #181818;
+        }
+
+        .input-box {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .input-box span.details_span {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .input-box input,
+        .input-box select {
+            width: 100%;
+            height: 52px;
+            background-color: #e7e7e7;
+            border: none;
+            border-radius: 10px;
+            padding: 0 15px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #333;
+            margin: 8px 0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .input-box select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20fill='%23666'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M7%2010l5%205%205-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+        }
+
+        .input-box input:focus,
+        .input-box select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(42, 47, 79, 0.15);
+        }
+
+        .input-box input::placeholder,
+        .input-box select::placeholder {
+            color: #999;
+            font-style: italic; 
+        }
+
+        .input-box select:focus option {
+            background-color: #fbfbfb; 
+            color: #525252;
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .button input {
+            background: linear-gradient(90deg, #1e1e1e, #2a2a2a);
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            border-radius: 12px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .button input::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        .button input:hover::before {
+            width: 0%;
+            height: 0%;
+            opacity: 1;
+        }
+
+        .button input:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .button input:active {
+            transform: scale(0.98)
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            display: none;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .tittle {
+                font-size: 22px;
+            }
+            select {
+                font-size: 14px;
+            }
+            .card .tittle {
+                font-size: 20px;
+            }
+            .input-box input,
+            .input-box select {
+                font-size: 14px;
+            }
+            .button input {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+
+        .habbo-decoracao {
+            position: fixed;
+            z-index: 1;
+            pointer-events: none;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.25));
+            transition: all 0.5s ease;
+        }
+
+        .decor-direita {
+            right: -280px;
+            bottom: -40px;
+            transform: rotate(-15deg) scaleX(1);
+            z-index: 999;
+            animation: decorEnter 0.5s ease forwards;
+        }
+
+        @keyframes decorEnter {
+            from {
+                right: -280px;
+                opacity: 0;
+            }
+            to {
+                right: -65px;
+                opacity: 1;
+            }
+        }
+
+        .decor-direita.closing {
+            animation: decorSaida 0.5s ease forwards;
+        }
+
+        @keyframes decorSaida {
+            to {
+                right: -280px;
+                opacity: 0;
+                transform: rotate(345deg) scaleX(-1);
+            }
+        }
+
+        #aviso {
+            position: fixed;
+            font-family: 'Poppins', sans-serif;
+            bottom: 70px;
+            right: 70px;
+            background-color: #f8f8ff;
+            border: 1px solid #dedede;
+            color: #050505;
+            padding: 10px 15px;
+            border-radius: 14px;
+            max-width: 270px;
+            font-size: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideIn 0.5s ease;
+        }
+
+        #aviso button {
+            position: absolute;
+            top: 7px;
+            right: 9px;
+            background: none;
+            border: none;
+            color: rgb(136, 136, 136);
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        #aviso button:hover {
+            color: rgb(174, 0, 0);
+        }
+
+        #aviso.closing {
+            animation: slideOut 0.5s ease forwards;
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        #creditos {
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        #creditos p {
+            margin: 5px 0;
+        }
+
+        #creditos a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .carregamento-post {
+            display: none;
+            width: 25px;
+            height: 25px;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+            margin-top: -25px;
+            vertical-align: middle;
+            background-image: url('https://i.imgur.com/w0yfJBl.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .toast {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: -100%;
+            background-color: rgba(22, 22, 22, 0.34);
+            border: 1px solid #ff0000;
+            color: white;
+            padding: 13px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.15);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.5s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .toast .icon {
+            margin-right: 10px;
+            margin-bottom: -5px;
+            font-size: 20px;
+            color: rgb(255, 0, 0);
+        }
+
+        .toast-post {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: -100%;
+            background-color: rgba(0, 0, 0, 0.15);
+            border: 1px solid #00ff22;
+            color: white;
+            padding: 13px;
+            border-radius: 10px;
+            z-index: 9999;
+            text-align: center;
+            font-size: 15px;
+            max-width: 300px;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .toast-post i {
+            animation: checkPop 0.6s ease;
+        }
+
+        @keyframes checkPop {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pontosBalanco {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-5px);}
+            60% {transform: translateY(-3px);}
+        }
+
+        .toast-post p::after {
+            content: "...";
+            display: inline-block;
+            animation: pontosBalanco 1.5s infinite;
+        }
+
+        @keyframes toastEntrada {
+            from {
+                right: -100%;
+                opacity: 0;
+            }
+            to {
+                right: 20px;
+                opacity: 1;
+            }
+        }
+
+        .toast.show, .toast-post.show, .toast-cargo.show {
+            opacity: 1;
+            display: flex;
+            animation: toastEntrada 0.5s ease forwards;
+        }
+
+        .toast-post i {
+            margin-right: 10px;
+            margin-bottom: -5px;
+            font-size: 20px;
+            color: rgb(46, 253, 0);
+        }
+
+        .toast-cargo {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: -100%;
+            background-color: rgba(0, 0, 0, 0.15);
+            border: 1px solid #e3e700;
+            color: white;
+            padding: 13px;
+            border-radius: 10px;
+            z-index: 9999;
+            text-align: center;
+            font-size: 15px;
+            max-width: 300px;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .toast-cargo i {
+            margin-right: 10px;
+            margin-bottom: -5px;
+            font-size: 20px;
+            color: rgb(222, 196, 0);
+        }
+
+  </style>
+</head>
+<body>
+  <div id="toast-post" class="toast-post">
+    <p><i class="fa-solid fa-check-circle"></i> Sucesso! Redirecionando</p>
+</div><div id="toast-cargo" class="toast-cargo">
+  <p><i class="fa-solid fa-triangle-exclamation"></i> Os cargos selecionados não podem ser iguais!</p>
+</div>
+    <div class="habbo-decoracao decor-direita">
+      <img src="https://i.imgur.com/0UUS3Mf.png" style="height: 280px;">
+  </div>
+    <div id="aviso">
+      <span><i class="fas fa-exclamation-triangle" style="color: #c7a900;"></i> Em casos de erros, contate a liderança da Ordem Militar.</span>
+      <button id="f-aviso"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+    <header>
+      <img src="https://i.imgur.com/w0yfJBl.png" alt="Logo">
+  </header>
+  <div class="container">
+    <div class="tittle">OM - Requerimentos</div>
+    <div class="custom-dropdown">
+        <button class="dropdown-toggle">
+          Selecione o requerimento desejado
+          <i class="fa-solid fa-chevron-down seta"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li data-value="novo_membro">Entrada</li>
+          <li data-value="promo_reb">Promoção/Rebaixamento</li>
+          <li data-value="saida_membro">Saída</li>
+          <li data-value="expulsao_membro">Expulsão</li>
+          <li data-value="reintegracao">Reintegração</li>
+          <li data-value="licença_pedido">Licença/Reserva</li>
+          <li data-value="licença_retorno">Retorno de licença/reserva</li>
+          <li data-value="troca_nick">Alteração de nickname</li>
+        </ul>
+      </div>
+      <input type="hidden" id="select_value">
+      
+    <div class="card" id="novo_membro">
+      <div class="tittle"><i class="fa-solid fa-user-plus"></i> Entrada</div>
+      <form id="novo_membro" action="#" onsubmit="return fill_entradas(event)">
+        <div class="details">
+          <div class="input-box">
+            <span class="details_span"><i class="fa-solid fa-user"></i> Nick do novo membro</span>
+            <input id="entrada_membro" type="text" placeholder="Ex: Nirvac. Caso tenha mais de um, separe por '/'" required>
+          </div>
+          <div class="button" id="entradas">
+            <input type="submit" value="Enviar">
+            <div class="carregamento-post"></div>
+          </div>
+          <div class="button" style="display: none;" id="entradas_dis">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" id="promo_reb">
+      <div class="tittle"><i class="fa-solid fa-arrows-up-down"></i> Promoção/Rebaixamento</div>
+      <form id="novo_membro" action="#" onsubmit="return fill_change(event)">
+        <div class="details">
+          <div class="input-box">
+            <span class="details_span">Nickname</span>
+            <input name="nickname_mudança_cargo" id="nickname_promo_reb" type="text" placeholder="Nick do membro que sofrerá a ação" required>                 
+        </div>
+        <div class="input-box">
+            <span class="details_span">Motivo da ação</span>
+            <input name="motivo_mudança_cargo" id="motivo_promo_reb" type="text" placeholder="Motivo da promoção ou rebaixamento" required>                 
+        </div>
+        <div class="input-box">
+          <span class="details_span">Cargo atual</span>
+          <select name="antigo_cargo" id="antigo_cargo">
+              <option value="" disabled selected>Selecione o cargo atual:</option>
+              <option value="1">Conselheiro</option>
+      <option value="2">Avaliador</option>
+      <option value="3">Graduador</option>
+      <option value="4">Estagiário</option>
+      <option value="5">Ministro</option>
+      <option value="6">Vice-Líder</option>
+      <option value="7">Líder</option>
+          </select>
+      </div>
+      <div class="input-box">
+        <span class="details_span">Novo cargo</span>
+        <select name="novo_cargo" id="novo_cargo">
+            <option value="" disabled selected>Selecione o novo cargo:</option>
+            <option value="1">Conselheiro</option>
+            <option value="2">Avaliador</option>
+            <option value="3">Graduador</option>
+            <option value="4">Estagiário</option>
+            <option value="5">Ministro</option>
+            <option value="6">Vice-Líder</option>
+            <option value="7">Líder</option>
+        </select>
+    </div>
+          <div class="button" id="promo_reb">
+            <input type="submit" value="Enviar">
+            <div class="carregamento-post"></div>
+          </div>
+          <div class="button" style="display: none;" id="promo_reb_dis">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" id="saida_membro">
+        <div class="tittle"><i class="fa-solid fa-door-open"></i> Saída</div>
+        <form id="form_saida" action="#" onsubmit="return fill_saida(event)">
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-solid fa-user"></i> Nick do policial</span>
+                    <input id="saida_membro" type="text" placeholder="Ex: Pistola-250. Caso tenha mais de um, separe por '/'" required>
+                </div>
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-regular fa-calendar"></i> Data da saída</span>
+                    <input id="saida_data" type="text" placeholder="Ex: 20 Nov 2023" required>
+                </div>
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-solid fa-comment"></i> Motivo</span>
+                    <input id="saida_motivo" type="text" placeholder="Ex: Pessoais" required>
+                </div>
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-solid fa-key"></i> Permissão</span>
+                    <input id="saida_permissao" type="text" placeholder="Nick de quem autorizou a saída" required>
+                </div>
+                <div class="button" id="saida_btn">
+                    <input type="submit" value="Enviar">
+                    <div class="carregamento-post"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="card" id="reintegracao">
+        <div class="tittle"><i class="fa-solid fa-rotate-left"></i> Reintegração</div>
+        <form id="form_reintegracao" action="#" onsubmit="return fill_reintegracao(event)">
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-solid fa-user"></i> Nick do reintegrado</span>
+                    <input id="reint_nick" type="text" placeholder="Ex: ???JUKA" required>
+                </div>
+                
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-solid fa-key"></i> Permissão</span>
+                    <input id="reint_permissao" type="text" placeholder="Nick de quem concedeu a permissão" required>
+                </div>
+    
+                <div class="button" id="reint_btn">
+                    <input type="submit" value="Enviar">
+                    <div class="carregamento-post"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="card" id="expulsao_membro">
+        <div class="tittle"><i class="fa-solid fa-ban"></i> Expulsão</div>
+        <form id="form_expulsao" action="#" onsubmit="return fill_expulsao(event)">
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-solid fa-user"></i> Nick do membro</span>
+                    <input id="expulsao_membro" type="text" placeholder="Ex: Nirvac" required>
+                </div>
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-regular fa-calendar"></i> Data da expulsão</span>
+                    <input id="expulsao_data" type="text" placeholder="Ex: 20 Nov 2023" required>
+                </div>
+                <div class="input-box">
+                    <span class="details_span"><i class="fa-solid fa-comment"></i> Motivo</span>
+                    <input id="expulsao_motivo" type="text" placeholder="Descreva aqui o motivo da expulsão" required>
+                </div>
+                <div class="button" id="expulsao_btn">
+                    <input type="submit" value="Enviar">
+                    <div class="carregamento-post"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="card" id="licença_pedido">
+      <div class="tittle"><i class="fa-solid fa-calendar-check"></i> Licença</div>
+      <form id="form_lic" action="#" onsubmit="return fill_license(event)">
+        <div class="details">
+          <div class="input-box">
+            <span class="details_span"><i class="fa-solid fa-user"></i> Nick</span>
+            <input id="lic_nick" type="text" placeholder="Ex: Pistola-250" required>
+          </div>
+          <div class="input-box">
+            <span class="details_span"><i class="fa-regular fa-calendar-alt"></i> Data de início/término</span>
+            <input id="lic_periodo" class="data_hour" placeholder="Período de licença" required>
+          </div>
+          <div class="button" id="lic">
+            <input type="submit" value="Enviar">
+            <div class="carregamento-post"></div>
+          </div>
+          <div class="button" style="display: none;" id="lic_dis">
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="card" id="licença_retorno">
+      <div class="tittle"><i class="fa-solid fa-arrow-rotate-left"></i> Retorno de licença</div>
+      <form id="form_retorno" action="#" onsubmit="return fill_retorno(event)">
+        <div class="details">
+          <div class="input-box">
+            <span class="details_span"><i class="fa-solid fa-user"></i> Nick</span>
+            <input id="ret_nick" type="text" placeholder="Ex: Nirvac" required>
+          </div>
+          <div class="button" id="ret">
+            <input type="submit" value="Enviar">
+            <div class="carregamento-post"></div>
+          </div>
+          <div class="button" style="display: none;" id="ret_dis">
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="card" id="troca_nick">
+      <div class="tittle"><i class="fa-solid fa-exchange-alt"></i> Alteração de Nickname</div>
+      <form id="troca_nick" action="#" onsubmit="return fill_nickname(event)">
+        <div class="details">
+          <div class="input-box">
+            <span class="details_span"><i class="fa-solid fa-user"></i> Nick atual</span>
+            <input id="nick_atual" type="text" placeholder="Ex: Pistola-250" required>
+          </div>
+          <div class="input-box">
+            <span class="details_span"><i class="fa-solid fa-user"></i> Nick novo</span>
+            <input id="nick_novo" type="text" placeholder="Ex: Pistola-250BAN" required>
+          </div>
+          <div class="button" id="nick">
+            <input type="submit" value="Enviar">
+            <div class="carregamento-post"></div>
+          </div>
+          <div class="button" style="display: none;" id="nick_dis">
+          </div>
+        </div>
+      </form>
+    </div>
+    <textarea id="fa-generated-message"></textarea>
+  </div>
+
+  <div id="toast" class="toast">
+    <span class="icon"><i class="fas fa-times"></i></span> Erro ao postar. Tente novamente.
+</div>
+
+<footer id="creditos">
+  <p><i class="fas fa-code"></i> Desenvolvido por <strong><a href="https://system.policercc.com.br/membros/%2Cyouiz" target="_blank">,youiz</a></strong></p>
+  <p>&copy; <span id="ano"></span> <strong>Ordem Militar</strong>. Todos os direitos reservados.</p>
+</footer>
+               
+         
+<textarea style="display: none;" id="fa-generated-message"></textarea> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://forumeiros.github.io/assets/src/form-generator/form-replace.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script>
+
+        document.getElementById("ano").textContent = new Date().getFullYear();
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const dropdown = document.querySelector(".custom-dropdown");
+        const toggle = document.querySelector(".dropdown-toggle");
+        const menu = document.querySelector(".dropdown-menu");
+        const inputHidden = document.querySelector("#select_value");
+
+        $('#antigo_cargo, #novo_cargo').on('change', function () {
+            const antigoCargo = $('#antigo_cargo').val();
+            const novoCargo = $('#novo_cargo').val();
+
+            if (antigoCargo === novoCargo) {
+                $('.toast-cargo').addClass('show');
+                setTimeout(function () {
+                    $('.toast-cargo').removeClass('show');
+                }, 5000);
+                
+                $('button[type="submit"]').prop('disabled', true);
+            } else {
+                $('button[type="submit"]').prop('disabled', false);
+            }
+        });
+
+        toggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle("dropdown-open");
+        });
+
+        menu.querySelectorAll("li").forEach((item) => {
+            item.addEventListener("click", function () {
+            toggle.innerHTML = `${this.textContent} <i class="fa-solid fa-chevron-down seta"></i>`;
+            inputHidden.value = this.getAttribute("data-value");
+            dropdown.classList.remove("dropdown-open");
+            document.querySelectorAll(".card").forEach(card => card.style.display = "none");
+            document.getElementById(this.getAttribute("data-value")).style.display = "block";
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("dropdown-open");
+                }
+            });
+        });
+
+
+        $(document).ready(function(){
+            $('#select_options').on('change',function(){
+                $(".card").hide();
+                $("#" + $(this).val()).show();
+            }).change();
+            document.querySelectorAll(".data_hour").forEach(function(element){
+                element.value = retorna_horario();
+            })
+        })
+
+        function fill_entradas(e){
+            e.preventDefault();
+            var isValid = true;
+            $("#novo_membro").find("input").each(function(){
+                if($(this).val() == ""){isValid = false};
+            })
+            if(isValid == true){
+        
+            var entradas = $("#entrada_membro").val().split(' / ');
+                var lista = '';
+                entradas.forEach(function(nickname){
+                lista = lista + "\n" + "[b]Nick:[/b] " + nickname;
+                    });
+        
+                var texto =
+                "[font=Poppins][color=#181818][b]ENTRADA[/b][/color][/font]\n" + 
+                    lista;
+                document.getElementById('fa-generated-message').value = texto;
+                }
+            else{
+                alert('Preencha todos os campos!');
+            };
+        }
+
+        function fill_reintegracao(e){
+            e.preventDefault();
+            var isValid = true;
+            $("#form_reintegracao").find("input").each(function(){
+                if($(this).val() == ""){isValid = false};
+            })
+            
+            if(isValid == true){
+                var texto = 
+                    "[font=Poppins][color=#181818][b]REINTEGRAÇÃO[/b][/color][/font]\n\n" +
+                    "[b]Membro:[/b] " + $("#reint_nick").val() + "\n" +
+                    "[b]Permissão:[/b] " + $("#reint_permissao").val();
+                
+                document.getElementById('fa-generated-message').value = texto;
+            }
+            else{
+                alert('Preencha todos os campos!');
+            };
+        }
+        
+        function fill_saida(e){
+            e.preventDefault();
+            var isValid = true;
+            $("#form_saida").find("input").each(function(){
+                if($(this).val() == ""){isValid = false};
+            })
+            
+            if(isValid == true){
+                var entradas = $("#saida_membro").val().split(' / ');
+                var lista = '';
+                entradas.forEach(function(nickname){
+                    lista += "\n[b]Membro:[/b] " + nickname + 
+                            "\n[b]Data:[/b] " + $("#saida_data").val() + 
+                            "\n[b]Motivo:[/b] " + $("#saida_motivo").val() +
+                            "\n[b]Permissão:[/b] " + $("#saida_permissao").val() + "\n";
+                });
+
+                var texto = "[font=Poppins][color=#181818][b]SAÍDA[/b][/color][/font]\n" + lista;
+                document.getElementById('fa-generated-message').value = texto;
+            }
+            else{
+                alert('Preencha todos os campos!');
+            };
+        }
+
+        function fill_expulsao(e){
+            e.preventDefault();
+            var isValid = true;
+            $("#form_expulsao").find("input").each(function(){
+                if($(this).val() == ""){isValid = false};
+            })
+            
+            if(isValid == true){
+                var entradas = $("#expulsao_membro").val().split(' / ');
+                var lista = '';
+                entradas.forEach(function(nickname){
+                    lista += "\n[b]Membro:[/b] " + nickname + 
+                            "\n[b]Data:[/b] " + $("#expulsao_data").val() + 
+                            "\n[b]Motivo:[/b] " + $("#expulsao_motivo").val() + "\n";
+                });
+
+                var texto = "[font=Poppins][color=#181818][b]EXPULSÃO[/b][/color][/font]\n" + lista;
+                document.getElementById('fa-generated-message').value = texto;
+            }
+            else{
+                alert('Preencha todos os campos!');
+            };
+        }
+
+
+        function fill_license(e){
+            e.preventDefault();
+            var isValid = true;
+            $("#form_lic").find("input").each(function(){
+                if($(this).val() == ""){isValid = false};
+            })
+            if(isValid == true){
+
+                var texto =
+                    "[color=#181818][b]LICENÇA/RESERVA[/b][/color]\n\n" +
+                    "[b]Nick:[/b] " + $("#lic_nick").val() + "\n" +
+                    "[b]Data de início/término:[/b] " + $("#lic_periodo").val();
+                document.getElementById('fa-generated-message').value = texto;
+            }
+            else{
+                alert('Preencha todos os campos!');
+            };
+        }
+
+        function fill_retorno(e){
+            e.preventDefault();
+            var isValid = true;
+            $("#form_retorno").find("input").each(function(){
+                if($(this).val() == ""){isValid = false};
+            })
+            if(isValid == true){
+                var texto =
+                    "[font=Poppins][color=#181818][b]RETORNO DE LICENÇA/RESERVA[/b][/color][/font] \n \n" +               
+                    "[b]Nick:[/b] " + $("#ret_nick").val() + "\n" +
+                    "[b]-[/b] Estou retornando de minha licença de serviço/reserva.";
+                document.getElementById('fa-generated-message').value = texto;
+            }
+            else{
+                alert('Preencha todos os campos!');
+            };
+        }
+
+        function fill_nickname(e){
+            e.preventDefault();
+            var isValid = true;
+            $("#troca_nick").find("input").each(function(){
+                if($(this).val() == ""){isValid = false};
+            })
+            if(isValid == true){
+
+                var texto =
+                    "[font=Poppins][color=#181818][b]ALTERAÇÃO DE NICK[/b][/color][/font] \n \n" +               
+                    "[b]Nick atual:[/b] " + $("#nick_atual").val() + "\n" +
+                    "[b]Nick novo:[/b] " + $("#nick_novo").val() + "\n";
+                document.getElementById('fa-generated-message').value = texto;
+            }
+            else{
+                alert('Preencha todos os campos!');
+            };
+        };
+
+        function fill_change(e) {
+        $('form').on('submit', function (event) {
+            event.preventDefault();
+
+            if ($('#novo_cargo').val() === $('#antigo_cargo').val()) {
+                return false;
+            }
+
+            var tipo = (parseInt($('#antigo_cargo').val()) < parseInt($('#novo_cargo').val())) ? 'PROMOÇÃO' : 'REBAIXAMENTO';
+
+            var texto =
+                "[font=Poppins][color=#181818][b]" + tipo + " DE MEMBRO[/b][/color] \n\n" +
+                "[b]Nickname:[/b] " + $('#nickname_promo_reb').val() + "\n" +
+                "[b]Antigo cargo:[/b] " + getCargoName($('#antigo_cargo').val()) + "\n" +
+                "[b]Novo cargo:[/b] " + getCargoName($('#novo_cargo').val()) + "\n" +
+                "[b]Motivo:[/b] " + $('#motivo_promo_reb').val() + "[/font]";
+
+            $('#fa-generated-message').val(texto);
+            send_data('change_cargo');
+            return true;
+        });
+        }
+
+        function getCargoName(value) {
+            var cargos = ['Conselheiro', 'Avaliador', 'Graduador', 'Estagiário', 'Ministro', 'Vice-Líder', 'Líder'];
+            var index = parseInt(value) - 1;
+            return (index >= 0 && index < cargos.length) ? cargos[index] : '';
+        }
+
+
+            window.onload = function () {
+                const floatingMessage = document.getElementById("aviso");
+                const closeButton = document.getElementById("f-aviso");
+                const decorElement = document.querySelector('.decor-direita');
+
+            closeButton.addEventListener("click", function () {
+                floatingMessage.classList.add('closing');
+                decorElement.classList.add('closing');
+
+                floatingMessage.addEventListener('animationend', () => {
+                floatingMessage.style.display = "none";
+                }, { once: true });
+
+                decorElement.addEventListener('animationend', () => {
+                decorElement.style.display = "none";
+                }, { once: true });
+            });
+
+                setTimeout(() => {
+                    floatingMessage.classList.add('closing');
+                    decorElement.classList.add('closing');
+                }, 15000);
+            };
+
+</script>
+<script type="text/javascript">
+    (function ($) {
+        'use strict';
+        $(window).on('load', function () {
+            $('form').on('submit', function (event) {
+                event.preventDefault();
+
+                if ($("#fa-generated-message").val().trim() !== '') {
+                    var submitButton = $(this).find('input[type="submit"]');
+                    var loadingSpinner = $(this).find('.carregamento-post');
+
+                    submitButton.prop('disabled', true);
+                    loadingSpinner.show();
+
+                    setTimeout(function () {
+                        $.post('/post', {
+                            t: 37957,
+                            message: $('#fa-generated-message').val().trim(),
+                            mode: 'reply',
+                            tid: 37957,
+                            post: "Enviar",
+                            form_token: $('[name="form_token"]').val(),
+                            form_captcha: $('[name="form_captcha"]').val()
+                        }).done(function () {
+                            $('#toast-post').addClass('show');
+                            setTimeout(function () {
+                                window.location.href = 'https://www.policiarcc.com/t37957-om-requerimentos-de-membros?view=newest#new';
+                            }, 1500);
+                        }).fail(function () {
+                            $('#toast').addClass('show');
+                            setTimeout(function () {
+                                $('#toast').removeClass('show');
+                            }, 4000);
+                        }).always(function () {
+                            loadingSpinner.hide();
+                            submitButton.prop('disabled', false);
+                        });
+                    }, 1000);
+                }
+            });
+        });
+    })(jQuery);
+
+</script>
+</body>
+</html>
